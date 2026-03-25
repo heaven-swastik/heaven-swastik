@@ -417,6 +417,7 @@ From AI to social impact to full-stack products — consistently building under 
 <br/>
 
 <sub><code>crafted with 💙 + ☕ + sleepless nights &nbsp;·&nbsp; Swastik</code></sub>
+<sub><code>email: swastikmanna2006@gmail.com </code></sub>
 
 <br/><br/>
 
