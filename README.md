@@ -109,79 +109,77 @@ flowchart LR
 <br/>
 
 <!-- ═══════════════════ PROJECTS ═══════════════════ -->
-## 🚀 Featured Projects
+## Selected Work
 
-<table>
-<tr>
-<td width="50%" valign="top">
+<sub>Applied ML, IoT and security systems — each one evaluated honestly against a baseline.</sub>
 
-### 🎧 Melodiary
-**Where privacy meets connection**
+<div align="center">
 
-Share music, play games & chat in sync — with **zero personal data**. Join with just a Room ID + PIN.
+![Aircraft](https://img.shields.io/badge/AIRCRAFT_CLASSIFIER-76.4%25_TEST_ACC-00F5FF?style=for-the-badge&labelColor=0d1117)
+![AQI](https://img.shields.io/badge/KOLKATA_AQI-R²_0.875-7B2FF7?style=for-the-badge&labelColor=0d1117)
+![Fruit](https://img.shields.io/badge/FRESHNESS_CLASSIFIER-99.7%25_VAL_ACC-FF2E88?style=for-the-badge&labelColor=0d1117)
 
-`Anonymous access` · `Synced playback` · `In-chat games` · `Group messaging`
+</div>
 
-![Flutter](https://img.shields.io/badge/Flutter-0d1117?style=flat-square&logo=flutter&logoColor=54C5F8)
-![Status](https://img.shields.io/badge/Active-00f5ff?style=flat-square&labelColor=0d1117)
+<br/>
 
-</td>
-<td width="50%" valign="top">
+### 01 &nbsp;·&nbsp; Aircraft Manufacturer Classification
+<sub>`PyTorch` `Torchvision` `ResNet-18` `Transfer Learning` `FGVC-Aircraft`</sub>
 
-### 💊 Aarogyadaan
-**Medicine shouldn't be a privilege**
+| Problem | Approach | Outcome |
+|:--|:--|:--|
+| Fine-grained recognition of **30 aircraft manufacturers** on a heavily imbalanced dataset (733 Boeing training images vs. ~33 for the smallest classes). | Frozen-backbone baseline → **partial fine-tuning** (layer4 + classifier head). Test set touched exactly once. Benchmarked against a majority-class and a pixel-level logistic-regression baseline. | **76.4% test accuracy · 0.79 macro-F1**, vs. 22.0% for the majority baseline and 26.4% for pixel logistic regression. |
 
-AI verifies surplus medicine by name & composition; a **tamper-proof blockchain** ledger routes it to people who need it — at zero or low cost.
+<br/>
 
-`AI classification` · `Blockchain` · `Smart redistribution`
+### 02 &nbsp;·&nbsp; Kolkata AQI Forecasting &nbsp;[![repo](https://img.shields.io/badge/repo-AQI--prediction-0d1117?style=flat-square&logo=github)](https://github.com/heaven-swastik/AQI-prediction)
+<sub>`Python` `scikit-learn` `XGBoost` `Time-series features`</sub>
 
-![ML](https://img.shields.io/badge/AI%2FML-0d1117?style=flat-square&logo=tensorflow&logoColor=FF6F00)
-![Blockchain](https://img.shields.io/badge/Blockchain-0d1117?style=flat-square&logo=ethereum&logoColor=8A2BE2)
-![Flask](https://img.shields.io/badge/Flask-0d1117?style=flat-square&logo=flask&logoColor=white)
+| Problem | Approach | Outcome |
+|:--|:--|:--|
+| Predict **next-day AQI for Kolkata** from historical air-quality records. | Lag-based feature engineering; **chronological** train/test split (no leakage). Persistence baseline vs. Ridge, Random Forest and XGBoost, scored on MAE, RMSE and R². | **Ridge Regression won — MAE 14.26, R² 0.875.** A simple model beat the complex ones on this data. |
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+<br/>
 
-### 🧠 Smart Memory Support System
-**Technology with a human heart**
+### 03 &nbsp;·&nbsp; Smart AI Refrigerator — Predictive Freshness
+<sub>`FastAPI` `React` `MobileNetV2` `Grad-CAM` `Fruits-360` &nbsp;·&nbsp; IEEE research context</sub>
 
-An assistive device for people with memory loss: point the camera at a face and hear *"This is your daughter, Priya."*
+| Problem | Approach | Outcome |
+|:--|:--|:--|
+| Estimate **fruit ripeness and remaining freshness** using vision plus an electronic nose — deliberately without NIR spectroscopy. | 12-class **MobileNetV2** on real Fruits-360 photos; ripeness via classical colour science and freshness via **Q10 decay** (kept interpretable on purpose); **Grad-CAM** explainability; hardware abstraction layer for future Raspberry Pi / sensor integration. | **99.7% validation accuracy** (classifier), served through a FastAPI + React glassmorphism UI. |
 
-`ESP32 + camera` · `Facial recognition` · `Contextual info`
+<br/>
 
-![ESP32](https://img.shields.io/badge/ESP32-0d1117?style=flat-square&logo=espressif&logoColor=E7352C)
-![CV](https://img.shields.io/badge/Computer_Vision-0d1117?style=flat-square&logo=opencv&logoColor=00f5ff)
+### 04 &nbsp;·&nbsp; SUFIN — Smart Urban Flood Intelligence Network
+<sub>`Arduino` `GSM` `Flutter` `Next.js` `TypeScript` `Recharts` &nbsp;·&nbsp; IEEE research project</sub>
 
-</td>
-<td width="50%" valign="top">
+| Problem | Approach | Outcome |
+|:--|:--|:--|
+| Early warning for **urban drain overflow** where connectivity is poor. | Arduino + GSM sensor nodes; a **Flutter Android gateway** relays readings over SMS; a Next.js / TypeScript dashboard visualises live risk. Simulation corrected against the formula in the underlying IEEE paper. | Low-cost nodes at **₹820 each**, with overflow-probability and rise-speed calculations fixed to match the published model. |
 
-### 📊 BigScout
-**Smarter business decisions, powered by AI**
+<br/>
 
-Enter business type + capital → neural networks and map intelligence estimate location fit, competition and approximate ROI.
+### 05 &nbsp;·&nbsp; CyberFlow — Cyber-Fraud Money-Trail Intelligence
+<sub>`XGBoost` `Q-learning` `React` `Node.js` `SQLite` &nbsp;·&nbsp; Smart India Hackathon prototype</sub>
 
-`Neural networks` · `Map APIs` · `Profit prediction`
+| Problem | Approach | Outcome |
+|:--|:--|:--|
+| Investigators struggle to see **where stolen money moves next** after a fraud complaint is filed. | XGBoost classifiers predict the fraud stage (collection → layering → consolidation → cash-out); **tabular Q-learning** plus a rule-based path predictor ranks probable ATM cash-out locations. JWT + bcrypt auth. | Designed as a **paid API layer on top of the existing NCRP portal** rather than a replacement — a deployable model for government and bank departments. |
 
-![NN](https://img.shields.io/badge/Neural_Networks-0d1117?style=flat-square&logo=tensorflow&logoColor=FF6F00)
-![Maps](https://img.shields.io/badge/Map_APIs-0d1117?style=flat-square&logo=googlemaps&logoColor=4285F4)
+<br/>
 
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
+<details>
+<summary><b>More builds</b> &nbsp;·&nbsp; hackathon and product experiments</summary>
 
-### 📜 CertifyMe
-**One template. Infinite certificates.**
+<br/>
 
-Upload a design, configure font / size / position once, and generate certificates in bulk — no more copy-pasting 200 names.
+- **Aarogyadaan** — AI-verified medicine redistribution with a blockchain ledger · `Flask` `ML` `Blockchain`
+- **Smart Memory Support System** — ESP32 + facial recognition to help people with memory loss recognise loved ones · `ESP32` `Computer Vision`
+- **BigScout** — neural-network location and ROI estimation for new businesses · `Neural Networks` `Map APIs`
+- **Melodiary** — anonymous, synced music-and-chat rooms · `Flutter`
+- **CertifyMe** — bulk certificate generation from a one-time template config · `Web`
 
-`Custom templates` · `Bulk generation` · `Zero human error` &nbsp; ![Shipped](https://img.shields.io/badge/Shipped-brightgreen?style=flat-square&labelColor=0d1117)
-
-</td>
-</tr>
-</table>
+</details>
 
 <br/>
 
@@ -231,4 +229,3 @@ Upload a design, configure font / size / position once, and generate certificate
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF2E88,50:7B2FF7,100:00F5FF&height=120&section=footer" width="100%" />
 
 </div>
-
